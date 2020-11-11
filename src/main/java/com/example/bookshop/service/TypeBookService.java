@@ -14,13 +14,9 @@ public class TypeBookService {
     @Autowired
     private TypeBookRepository repo;
 
-    public List<TypeBook> listAll() {
-        return repo.findAll();
-    }
+    public List<TypeBook> listAll() { return repo.findAll(); }
 
-    public void save(TypeBook typeBook) {
-        repo.save(typeBook);
-    }
+    public void save(TypeBook typeBook) { repo.save(typeBook); }
 
     public TypeBook get(Integer id) {
         return repo.findById(id).get();
