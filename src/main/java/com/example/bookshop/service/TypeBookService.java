@@ -1,3 +1,4 @@
+
 package com.example.bookshop.service;
 
 import com.example.bookshop.model.TypeBook;
@@ -29,4 +30,28 @@ public class TypeBookService {
     public void delete(Integer id) {
         repo.deleteById(id);
     }
+    public TypeBook createTypeBook(TypeBook typebook) {
+        typebook.setId(null);
+        return repo.save(typebook);
+    }
+    public TypeBook saveTypeBook(TypeBook typebook) {
+    	return repo.save(typebook);
+    }
+    public List<TypeBook> saveTypeBooks(List<TypeBook> typebooks){
+    	return repo.saveAll(typebooks);
+    	
+    }
+    public List<TypeBook> getTypeBook(){
+    	return repo.findAll();
+    }
+    public TypeBook getTypeBookById(int id) {
+    	return repo.findById(id).get();
+    }
+   
+    public String deleteTypebook(int id) {
+    	repo.deleteById(id);
+    	return "Book remove || "+id;
+    }
+  
+    
 }
