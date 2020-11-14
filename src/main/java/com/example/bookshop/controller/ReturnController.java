@@ -1,8 +1,6 @@
 package com.example.bookshop.controller;
 
-import com.example.bookshop.model.Rent;
 import com.example.bookshop.model.Return;
-import com.example.bookshop.repository.RentRepository;
 import com.example.bookshop.repository.ReturnRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

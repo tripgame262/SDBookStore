@@ -1,9 +1,7 @@
 package com.example.bookshop.controller;
 
-import com.example.bookshop.model.Customer;
 import com.example.bookshop.model.TypeBook;
 import com.example.bookshop.service.TypeBookService;
-import org.aspectj.bridge.AbortException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +17,18 @@ public class TypeBookController {
     public List<TypeBook> list() {
         return typeBookService.listAll();
     }
+
+
+    @GetMapping("/show/{id}")
+    public Integer getTypeBook(@PathVariable("id") Integer id){
+        return typeBookService.get(id);
+    }
+
+    @PostMapping("/create")
+    public TypeBook createTypeBook (@RequestBody TypeBook typeBook){
+        return typeBookService.save(typeBook);
+    }
+
 
 
     @DeleteMapping("/delete/{id}")

@@ -17,8 +17,10 @@ public class TypeBookService {
     public List<TypeBook> listAll() {
         return repo.findAll(); }
 
-    public void save(TypeBook typeBook) {
-        repo.save(typeBook); }
+    public TypeBook save(TypeBook typeBook) {
+        repo.save(typeBook);
+        return typeBook;
+    }
 
     public Integer get(int id) {
         return repo.findById(id).getId();
