@@ -14,7 +14,7 @@ public class Rent {
     private String rentD;
 
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 

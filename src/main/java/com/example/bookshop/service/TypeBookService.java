@@ -22,7 +22,7 @@ public class TypeBookService {
         return typeBook;
     }
 
-    public Integer get(int id) {
+    public TypeBook get(int id) {
         return repo.findById(id).getId();
     }
 

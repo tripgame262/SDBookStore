@@ -1,5 +1,6 @@
 package com.example.bookshop.controller;
 
+import com.example.bookshop.model.Customer;
 import com.example.bookshop.model.TypeBook;
 import com.example.bookshop.service.TypeBookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class TypeBookController {
 
 
     @GetMapping("/show/{id}")
-    public Integer getTypeBook(@PathVariable("id") Integer id){
+    public TypeBook getTypeBook(@PathVariable("id") Integer id){
         return typeBookService.get(id);
     }
 
@@ -34,6 +35,7 @@ public class TypeBookController {
         typeBookService.delete(id);
         return "Deleted.";
     }
+
 
 
 }
