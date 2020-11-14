@@ -9,7 +9,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-    java.util.Date Date;
+    Date Date;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "book_id")

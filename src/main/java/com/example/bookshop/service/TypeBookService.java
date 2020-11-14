@@ -2,7 +2,6 @@ package com.example.bookshop.service;
 
 import com.example.bookshop.model.TypeBook;
 import com.example.bookshop.repository.TypeBookRepository;
-import com.example.bookshop.repository.TypebooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
