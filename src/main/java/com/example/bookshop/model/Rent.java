@@ -2,6 +2,7 @@ package com.example.bookshop.model;
 
 import javax.persistence.*;
 
+
 @Entity(name = "rent")
 public class Rent {
 

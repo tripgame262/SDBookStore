@@ -1,6 +1,7 @@
 package com.example.bookshop.service;
 
 import com.example.bookshop.model.TypeBook;
+import com.example.bookshop.repository.TypeBookRepository;
 import com.example.bookshop.repository.TypebooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import java.util.List;
 @Transactional
 public class TypeBookService {
     @Autowired
-    private TypebooksRepository repo;
+    private TypeBookRepository repo;
 
     public List<TypeBook> listAll() {
         return repo.findAll(); }
@@ -22,11 +23,11 @@ public class TypeBookService {
         return typeBook;
     }
 
-    public TypeBook get(int id) {
-        return repo.findById(id).getId();
+    public TypeBook get(Integer id) {
+        return repo.findById(id).get();
     }
 
     public void delete(int id) {
-        repo.deleteTypeBook(id);
+        repo.deleteById(id);
     }
 }

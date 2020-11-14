@@ -2,12 +2,16 @@ package com.example.bookshop.model;
 
 
 import javax.persistence.*;
-@Entity
-public class TypeBook {
+
+@Entity(name = "order")
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
-    private String type;
+
+    @Column(name = "Date")
+    private String date;
 
     public Integer getId() {
         return id;
@@ -17,11 +21,11 @@ public class TypeBook {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getDate() {
+        return date;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setDate(String date) {
+        this.date = date;
     }
 }
