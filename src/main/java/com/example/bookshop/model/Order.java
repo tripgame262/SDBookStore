@@ -2,16 +2,22 @@ package com.example.bookshop.model;
 
 
 import javax.persistence.*;
+import java.util.Date;
 
-@Entity(name = "order")
+@Entity
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
+    Integer id;
+    java.util.Date Date;
 
-    @Column(name = "Date")
-    private String date;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "book_id")
+    Book book;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
+    Customer customer;
 
     public Integer getId() {
         return id;
@@ -21,11 +27,27 @@ public class Order {
         this.id = id;
     }
 
-    public String getDate() {
-        return date;
+    public java.util.Date getDate() {
+        return Date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDate(java.util.Date date) {
+        Date = date;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }
