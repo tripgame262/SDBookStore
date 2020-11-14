@@ -29,8 +29,6 @@ public class TypeBookController {
         return typeBookService.save(typeBook);
     }
 
-
-
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable("id") int id){
         typeBookService.delete(id);
