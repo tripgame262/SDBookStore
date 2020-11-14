@@ -1,18 +1,18 @@
 package com.example.bookshop.model;
 
+
 import javax.persistence.*;
 
-@Entity(name = "rent")
-public class Rent {
+@Entity(name = "return")
+public class Return {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "Return_id")
     private Integer id;
 
-    @Column(name = "RentDate")
-    private String rentD;
-
+    @Column(name = "ReturnDate")
+    private String returnD;
 
     public Integer getId() {
         return id;
@@ -22,13 +22,11 @@ public class Rent {
         this.id = id;
     }
 
-
-
-    public String getRentD() {
-        return rentD;
+    public String getReturnD() {
+        return returnD;
     }
 
-    public void setRentD(String rentD) {
-        this.rentD = rentD;
+    public void setReturnD(String returnD) {
+        this.returnD = returnD;
     }
 }
