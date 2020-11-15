@@ -16,16 +16,16 @@ import java.util.List;
 @RequestMapping("/api/order")
 public class OrderController {
     @Autowired
-    private OrderRepository repository;
+    private OrderRepository Orderrepository;
 
     @GetMapping("/showall")
     public List<O_rder> showAll(){
-        return repository.showAll();
+        return Orderrepository.showAll();
     }
 
     @PostMapping("/create")
     public O_rder createOrder (@RequestBody O_rder o_rder){
-        return repository.save(o_rder);
+        return Orderrepository.save(o_rder);
     }
 
 }

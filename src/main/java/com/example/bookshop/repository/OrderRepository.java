@@ -18,7 +18,7 @@ public class OrderRepository {
     private EntityManager entityManager;
 
     public List<O_rder> showAll(){
-        Query query = entityManager.createQuery("from Order");
+        Query query = entityManager.createQuery("from O_rder");
         return query.getResultList();
     }
 
