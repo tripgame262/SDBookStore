@@ -6,7 +6,10 @@ import javax.persistence.*;
 public class TypeBook {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
+
+
     private String type;
 
     public Integer getId() {

@@ -1,7 +1,8 @@
 package com.example.bookshop.repository;
 
-import com.example.bookshop.model.Book;
-import com.example.bookshop.model.Order;
+
+import com.example.bookshop.model.O_rder;
+
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -16,25 +17,25 @@ public class OrderRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<Order> showAll(){
+    public List<O_rder> showAll(){
         Query query = entityManager.createQuery("from Order");
         return query.getResultList();
     }
 
     @Transactional
-    public Order save(Order order){
-        entityManager.persist(order);
-        return order;
+    public O_rder save(O_rder o_rder){
+        entityManager.persist(o_rder);
+        return o_rder;
     }
 
-    public Order findById(Integer id){
-        return entityManager.find(Order.class , id);
+    public O_rder findById(Integer id){
+        return entityManager.find(O_rder.class , id);
     }
 
     @Transactional
-    public Order deleteBook(Integer id){
-        Order order = entityManager.find(Order.class, id);
-        entityManager.remove(order);
-        return order;
+    public O_rder deleteBook(Integer id){
+        O_rder o_rder = entityManager.find(O_rder.class, id);
+        entityManager.remove(o_rder);
+        return o_rder;
     }
 }

@@ -1,42 +1,41 @@
 package com.example.bookshop.model;
 
-
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Order {
+public class O_rder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    Date Date;
-
+    Integer Order_id;
+    Date D_ate;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "book_id")
-    Book book;
+        Book book;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id")
     Customer customer;
 
-    public Integer getId() {
-        return id;
+    public Integer getOrder_id() {
+        return Order_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setOrder_id(Integer order_id) {
+        Order_id = order_id;
     }
 
-    public java.util.Date getDate() {
-        return Date;
-    }
-
-    public void setDate(java.util.Date date) {
-        Date = date;
-    }
 
     public Book getBook() {
         return book;
+    }
+
+    public Date getD_ate() {
+        return D_ate;
+    }
+
+    public void setD_ate(Date d_ate) {
+        D_ate = d_ate;
     }
 
     public void setBook(Book book) {
@@ -44,10 +43,10 @@ public class Order {
     }
 
     public Customer getCustomer() {
-        return customer;
+    return customer;
     }
 
     public void setCustomer(Customer customer) {
-        this.customer = customer;
+    this.customer = customer;
     }
 }
