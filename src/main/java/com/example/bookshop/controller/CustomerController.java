@@ -38,6 +38,7 @@ public class CustomerController {
         Customer editCustomer = repository.findById(customer.getId());
         editCustomer.setName(customer.getName());
         editCustomer.setTel(customer.getTel());
+        editCustomer.setAddress(customer.getAddress());
         return repository.save(editCustomer);
     }
 }
