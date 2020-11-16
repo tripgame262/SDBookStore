@@ -15,7 +15,7 @@ public class CustomerRepository {
     private EntityManager entityManager;
 
     public List<Customer> showAll(){
-        Query query = entityManager.createQuery("from customers");
+        Query query = entityManager.createQuery("from Customer");
         return query.getResultList();
     }
 

@@ -4,7 +4,6 @@ import com.example.bookshop.model.Book;
 import com.example.bookshop.model.TypeBook;
 import com.example.bookshop.repository.BookRepository;
 import com.example.bookshop.repository.TypeBookRepository;
-import com.example.bookshop.service.TypeBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +15,7 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
     @Autowired
-    private TypeBookService typeBookService;
+    private TypeBookRepository typeBookRepository;
 
     @GetMapping("/showall")
     public List<Book> showAll(){
@@ -25,8 +24,9 @@ public class BookController {
 
     @PostMapping("/create")
     public Book create(@RequestBody Book book){
-        TypeBook typeBook = typeBookService.get(book.getTypeId());
+        TypeBook typeBook = typeBookRepository.findById(book.getTypeId());
         book.setTypeBook(typeBook);
+        book.setStatus(true);
         return bookRepository.save(book);
     }
 }

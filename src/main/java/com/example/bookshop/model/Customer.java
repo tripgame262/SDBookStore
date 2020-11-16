@@ -2,18 +2,14 @@ package com.example.bookshop.model;
 
 import javax.persistence.*;
 
-@Entity(name = "customers")
+@Entity
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Integer id;
-
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "tel")
     private String tel;
+    private String address;
 
     public Integer getId() {
         return id;
@@ -37,5 +33,13 @@ public class Customer {
 
     public void setTel(String tel) {
         this.tel = tel;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
