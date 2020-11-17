@@ -13,6 +13,11 @@ public class TypeBookController {
     @Autowired
     private TypeBookRepository typeBookRepository;
 
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable("id") Integer id){
+        typeBookRepository.deleteTypeBook(id);
+    }
+
     @GetMapping("/showall")
     public List<TypeBook> list() {
         return typeBookRepository.showAll();

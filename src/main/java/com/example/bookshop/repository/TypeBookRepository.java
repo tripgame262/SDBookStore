@@ -30,7 +30,7 @@ public class TypeBookRepository {
     }
 
     @Transactional
-    public TypeBook deleteBook(Integer id){
+    public TypeBook deleteTypeBook(Integer id){
         TypeBook typeBook = entityManager.find(TypeBook.class, id);
         entityManager.remove(typeBook);
         return typeBook;
